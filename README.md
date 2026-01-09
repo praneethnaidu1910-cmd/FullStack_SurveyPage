@@ -28,11 +28,9 @@ Backend
 
 The application follows a client-server architecture with a clear separation of concerns:
 
-* 
 **Frontend (Vue.js):** Built with a component-based architecture following the SPA pattern. It uses Vuex for centralized state management and Axios for API communication.
 
 
-* 
 **Backend (Spring Boot):** Follows a layered pattern: **Controller** (REST endpoints), **Service** (Business logic), **Repository** (JPA data access), and **Model** (Entity classes).
 
 
@@ -97,19 +95,15 @@ Note: The frontend is configured to communicate with the backend at `http://loca
 
 ## ✨ Key Features
 
-* 
 **Form Validation:** Client-side validation for required fields, email format, phone numbers (XXX-XXX-XXXX), and 5-digit ZIP codes.
 
 
-* 
 **Responsive Design:** Fully mobile-responsive UI using the Bootstrap 5 grid system and collapsible navigation.
 
 
-* 
 **State Management:** Predictable state transitions using Vuex actions, mutations, and getters.
 
 
-* 
 **Reusable Components:** Custom components for Alert Messages and Confirmation Dialogs to improve user experience.
 
 

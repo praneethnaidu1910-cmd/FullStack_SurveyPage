@@ -1,0 +1,5 @@
+## Use the below commands to run the full stack implementation of Swe-642 Survey App using Vue.js and Springboot
+
+For frontend : npm run serve
+
+For backend  : mvn spring-boot:run

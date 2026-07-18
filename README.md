@@ -1,7 +1,7 @@
 
 # Campus Survey Application (Vue.js + Spring Boot)
 
-This project is a full-stack Student Survey management system developed as part of **SWE 642: Software Engineering for the World Wide Web** at George Mason University. It features a responsive Single Page Application (SPA) frontend built with **Vue.js** and a robust **Spring Boot** RESTful backend.
+This project is a full-stack Student Survey management system developed  at George Mason University. It features a responsive Single Page Application (SPA) frontend built with **Vue.js** and a robust **Spring Boot** RESTful backend.
 
 ## 🚀 Project Overview
 
@@ -108,9 +108,5 @@ Note: The frontend is configured to communicate with the backend at `http://loca
 
 
 
-👥 Contributors 
-* **Praneeth Naidu**
-* **Sri Bhuvan Maddipudi**
-* **Ankit Raut**
-* **Shreyas Patil**
+
 

@@ -1,112 +1,70 @@
+# Campus Survey Platform
 
-# Campus Survey Application (Vue.js + Spring Boot)
+A full-stack survey management web application featuring a Vue.js SPA frontend and Spring Boot RESTful backend, deployed on AWS EC2 and S3.
 
-This project is a full-stack Student Survey management system developed  at George Mason University. It features a responsive Single Page Application (SPA) frontend built with **Vue.js** and a robust **Spring Boot** RESTful backend.
+## What It Does
 
-## 🚀 Project Overview
+Users can submit, view, edit, and delete campus surveys through a responsive single-page application. The system handles full CRUD operations with client-side validation, centralized state management, and a layered backend architecture.
 
-The application allows users to submit, view, edit, and delete campus surveys. It builds on previous assignments to demonstrate proficiency in modern web technologies, including centralized state management, layered backend architecture, and database persistence.
+## Tech Stack
 
-## 🛠️ Tech Stack
+**Frontend**
+- Vue.js 3 with Vuex (state management) and Vue Router
+- Axios for API communication
+- Bootstrap 5 for responsive UI
 
-Frontend 
+**Backend**
+- Spring Boot 2.7 / Java 17
+- JPA / Hibernate ORM
+- MySQL database
 
-* **Framework:** Vue.js 3
-* **State Management:** Vuex
-* **Routing:** Vue Router
-* **HTTP Client:** Axios
-* **Styling:** Bootstrap 5 & Font Awesome
+**Infrastructure**
+- Deployed on AWS EC2 (backend) and AWS S3 (static frontend)
 
-Backend 
+## Architecture
 
-* **Framework:** Spring Boot 2.7
-* **Language:** Java 17
-* **ORM:** JPA / Hibernate
-* **Database:** MySQL
+Client-server SPA pattern with clear separation of concerns:
+- **Frontend**: Component-based Vue.js with Vuex for predictable state transitions
+- **Backend**: Layered Spring Boot — Controller → Service → Repository → Model
 
-🏗️ System Architecture 
+## API Endpoints
 
-The application follows a client-server architecture with a clear separation of concerns:
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | /api/surveys | Retrieve all surveys |
+| GET | /api/surveys/{id} | Retrieve survey by ID |
+| POST | /api/surveys | Create new survey |
+| PUT | /api/surveys/{id} | Update existing survey |
+| DELETE | /api/surveys/{id} | Delete survey |
 
-**Frontend (Vue.js):** Built with a component-based architecture following the SPA pattern. It uses Vuex for centralized state management and Axios for API communication.
+## Setup
 
-
-**Backend (Spring Boot):** Follows a layered pattern: **Controller** (REST endpoints), **Service** (Business logic), **Repository** (JPA data access), and **Model** (Entity classes).
-
-
-
-📡 API Endpoints 
-
-The backend exposes the following RESTful endpoints for CRUD operations:
-
-| Method | Endpoint | Status Code | Description |
-| --- | --- | --- | --- |
-| `GET` | `/api/surveys` | 200 | Retrieve all surveys |
-| `GET` | `/api/surveys/{id}` | 200, 404 | Retrieve a specific survey by ID |
-| `POST` | `/api/surveys` | 201 | Create a new survey |
-| `PUT` | `/api/surveys/{id}` | 200, 404 | Update an existing survey |
-| `DELETE` | `/api/surveys/{id}` | 204, 404 | Delete a survey |
-
-## 🔧 Installation & Setup
-
-Prerequisites 
-
-* Java 17
-* Node.js & npm
-* Maven
-* MySQL
-
-### Backend Setup
-
-1. Navigate to the backend directory.
-2. Configure your MySQL database in `src/main/resources/application.properties`.
-3. The Survey entity is mapped to the `surveys` table, with a collection table `survey_likes` for storing user preferences.
-
-
-4. Run the application using Maven:
+**Backend**
 ```bash
+cd backend/swe642
 mvn spring-boot:run
-
 ```
 
+Configure MySQL in `src/main/resources/application.properties` before running.
 
-
-### Frontend Setup
-
-1. Navigate to the `survey-app-vue` directory.
-2. Install dependencies:
+**Frontend**
 ```bash
+cd frontend/survey-frontend
 npm install
-
-```
-
-
-3. Run the development server:
-```bash
 npm run serve
-
 ```
 
+Frontend communicates with backend at `http://localhost:8080`.
 
+## Key Features
 
-Note: The frontend is configured to communicate with the backend at `http://localhost:8080`.
+- **Form validation** — Required fields, email format, phone (XXX-XXX-XXXX), ZIP code (5-digit)
+- **Responsive design** — Mobile-friendly Bootstrap 5 grid with collapsible navigation
+- **Reusable components** — Custom Alert and Confirmation Dialog components
+- **State management** — Vuex actions, mutations, and getters for predictable data flow
 
+## Future Work
 
-
-## ✨ Key Features
-
-**Form Validation:** Client-side validation for required fields, email format, phone numbers (XXX-XXX-XXXX), and 5-digit ZIP codes.
-
-
-**Responsive Design:** Fully mobile-responsive UI using the Bootstrap 5 grid system and collapsible navigation.
-
-
-**State Management:** Predictable state transitions using Vuex actions, mutations, and getters.
-
-
-**Reusable Components:** Custom components for Alert Messages and Confirmation Dialogs to improve user experience.
-
-
-
-
-
+- Real-time seat availability updates via WebSockets
+- Email confirmation on survey submission using Resend API
+- Docker containerization for one-command local setup
